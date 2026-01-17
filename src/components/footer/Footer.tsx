@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <footer className="pt-[260px] xl:pt-[200px] pb-[100px] px-6 mx-auto max-w-8xl">
 
-            <img className="mb-12 md:mx-auto" src="/public/images/logo.svg" alt="Company Logo" />
+            <img className="mb-12 md:mx-auto" src="images/logo.svg" alt="Company Logo" />
 
             <div className="xl:flex xl:gap-24 xl:px-20">
                 <div className="flex flex-col gap-4 md:flex-row  xl:gap-24 md:gap-16 md:px-20 xl:px-0">
