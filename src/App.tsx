@@ -9,15 +9,15 @@ function App() {
         <Header />
         <img
           className='relative z-10 mt-12 mx-auto w-[320px] md:w-[450px] xl:w-[550px]'
-          src="/public/images/illustration-intro.png"
+          src="/images/illustration-intro.png"
           alt="intro illustration" />
         <img
           className='absolute bottom-0 left-0 w-full xl:hidden'
-          src="/public/images/bg-curvy-mobile.svg"
+          src="/images/bg-curvy-mobile.svg"
           alt="bg curvy mobile" />
         <img
           className='absolute bottom-0 left-0 w-full hidden xl:block'
-          src="/public/images/bg-curvy-desktop.svg"
+          src="/images/bg-curvy-desktop.svg"
           alt="bg curvy desktop" />
       </section>
 

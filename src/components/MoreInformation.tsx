@@ -2,7 +2,7 @@ export const MoreInformation = () => {
   return (
     <div id="nosotros" className="my-40 space-y-2 md:flex md:items-center md:gap-10 max-w-[920px] mx-auto">
 
-      <img className="md:w-[380px]" src="/public/images/illustration-stay-productive.png" alt="illustration stay productive" />
+      <img className="md:w-[380px]" src="/images/illustration-stay-productive.png" alt="illustration stay productive" />
 
       <div>
         <h2 className="font-bold mb-4 md:text-3xl">Somos tu equipo de marketing, sin vueltas</h2>
@@ -13,7 +13,7 @@ export const MoreInformation = () => {
 
         <a href="#" className=" text-Teal-200 flex items-center gap-2 hover:underline">
           <p>Más sobre nosotros</p>
-          <img src="/public/images/icon-arrow.svg" alt="icon arrow" />
+          <img src="/images/icon-arrow.svg" alt="icon arrow" />
         </a>
       </div>
     </div>
