@@ -2,7 +2,7 @@ import { Button } from './Button';
 
 export const Form = () => {
     return (
-        <div id='contacto' className="absolute top-[-160px] xl:top-[-130px] left-0 right-0 mx-auto mb-[300px] text-center px-6 py-10 bg-Navy-850 rounded-lg w-[336px] md:w-[520px] xl:w-[920px]">
+        <div id='contacto' className="absolute top-[-160px] xl:top-[-130px] left-0 right-0 mx-auto mb-[300px] text-center px-6 py-10 bg-Navy-850 rounded-lg w-[340px] md:w-[600px] xl:w-[920px]">
 
             <h2 className="font-bold mb-4 text-[1.25rem] md:text-3xl">Contactanos y empeza la transformación de tu negocio</h2>
 
