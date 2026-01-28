@@ -1,21 +1,86 @@
-export const MoreInformation = () => {
-  return (
-    <div id="nosotros" className="my-40 space-y-2 md:flex md:items-center md:gap-10 max-w-[920px] mx-auto">
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
-      <img className="md:w-[380px]" src="/images/illustration-stay-productive.png" alt="illustration stay productive" />
+export const MoreInformation = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [24, -24]);
+  // ↑ Parallax: según el scroll dentro de esta sección, la imagen se mueve suave.
+
+  return (
+    <motion.div
+      ref={ref}
+      id="nosotros"
+      className="my-44 space-y-3 md:flex md:items-center md:gap-12 max-w-[920px] mx-auto text-white"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+      // ↑ Reveal general al entrar: evita que esta sección se vea “estática”.
+    >
+      <motion.img
+        className="md:w-[420px]"
+        style={{ y }}
+        src="/images/illustration-stay-productive.png"
+        alt="illustration stay productive"
+        transition={{ type: "spring", stiffness: 80, damping: 20 }}
+        // ↑ Parallax con spring suave: se siente orgánico.
+      />
 
       <div>
-        <h2 className="font-bold mb-4 md:text-3xl">Somos tu equipo de marketing, sin vueltas</h2>
+        <motion.h2
+          className="font-bold mb-4 md:text-3xl"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, ease: "easeOut", delay: 0.05 }}
+          // ↑ El título entra un toque después para jerarquía.
+        >
+          Somos tu equipo de marketing, sin vueltas
+        </motion.h2>
 
-        <p className="text-sm mb-4 md:text-base">Somos una agencia enfocada en resultados. Nos apasiona construir marcas con presencia sólida y campañas que generen ventas.</p>
+        <motion.p
+          className="text-sm mb-4 md:text-base text-white/75"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, ease: "easeOut", delay: 0.12 }}
+        >
+          Somos una agencia enfocada en resultados. Nos apasiona construir marcas con presencia sólida y campañas que generen ventas.
+        </motion.p>
 
-        <p className="text-sm mb-4 md:text-base">Trabajamos con procesos simples, comunicación directa y una mentalidad de mejora constante. Si buscás un equipo que se comprometa de verdad con el crecimiento de tu negocio, estás en el lugar correcto.</p>
+        <motion.p
+          className="text-sm mb-4 md:text-base text-white/75"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, ease: "easeOut", delay: 0.18 }}
+        >
+          Trabajamos con procesos simples, comunicación directa y una mentalidad de mejora constante. Si buscás un equipo que se comprometa de verdad con el crecimiento de tu negocio, estás en el lugar correcto.
+        </motion.p>
 
-        <a href="#" className=" text-Teal-200 flex items-center gap-2 hover:underline">
+        <motion.a
+          href="#"
+          className="text-Teal-200 flex items-center gap-2 hover:underline w-fit"
+          whileHover={{ x: 6 }}
+          transition={{ type: "spring", stiffness: 260, damping: 18 }}
+          // ↑ Hover: el link se desplaza a la derecha (micro interacción).
+        >
           <p>Más sobre nosotros</p>
-          <img src="/images/icon-arrow.svg" alt="icon arrow" />
-        </a>
+          <motion.img
+            src="/images/icon-arrow.svg"
+            alt="icon arrow"
+            whileHover={{ x: 4 }}
+            transition={{ type: "spring", stiffness: 260, damping: 18 }}
+            // ↑ La flecha acompaña el movimiento en hover.
+          />
+        </motion.a>
       </div>
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
