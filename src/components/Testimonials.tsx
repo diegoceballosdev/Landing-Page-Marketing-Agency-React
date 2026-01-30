@@ -20,7 +20,7 @@ const item = {
 export const Testimonials = () => {
   return (
     <motion.div
-      className="flex flex-col gap-6 items-center pt-8 relative mt-44 w-[340px] md:w-[640px] mx-auto xl:flex-row xl:w-[920px]"
+      className="flex flex-col gap-6 items-center pt-8 relative mt-44 mb-20 max-w-5xl mx-auto xl:flex-row"
       variants={wrap}
       initial="hidden"
       whileInView="show"

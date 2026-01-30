@@ -12,7 +12,7 @@ const group = {
 export const Footer = () => {
   return (
     <motion.footer
-      className="pt-[280px] xl:pt-[220px] pb-[100px] px-6 mx-auto max-w-8xl"
+      className="pt-[500px] md:pt-[420px] xl:pt-[340px] pb-[100px] px-6 mx-auto max-w-8xl"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}

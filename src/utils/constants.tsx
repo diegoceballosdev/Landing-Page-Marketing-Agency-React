@@ -1,9 +1,8 @@
 import type { Feature } from "../types/type";
 import type { ContactInfo, Media } from "../types/type";
 import type { Testimonial } from "../types/type";
-import { FacebookIcon } from "../components/footer/FacebookIcon";
-import { InstagramIcon } from "../components/footer/InstagramIcon";
-import { TwitterIcon } from "../components/footer/TwitterIcon";
+import { BsInstagram, BsTwitterX } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
 
 export const contactsInfo: ContactInfo[] = [
     {
@@ -37,9 +36,9 @@ export const conditions: string[] = [
 ];
 
 export const medias: Media[] = [
-    { text: "Facebook", icon: <FacebookIcon /> },
-    { text: "Instagram", icon: <InstagramIcon /> },
-    { text: "Twitter", icon: <TwitterIcon /> },
+    { text: "Facebook", icon: <FaFacebookF/> },
+    { text: "Instagram", icon: <BsInstagram /> },
+    { text: "Twitter", icon: <BsTwitterX /> },
 ];
 
 export const features: Feature[] = [
