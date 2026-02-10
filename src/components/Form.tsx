@@ -17,7 +17,6 @@ export const Form = () => {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -46,7 +45,6 @@ export const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSuccess(false);
 
     if (!validate()) return;
 
@@ -60,7 +58,6 @@ export const Form = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
-      setSuccess(true);
       setName("");
       setEmail("");
       setMessage("");
