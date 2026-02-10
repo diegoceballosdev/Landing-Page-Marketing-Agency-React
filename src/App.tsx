@@ -1,10 +1,17 @@
-import { Header, Hero, Features, MoreInformation, Testimonials, Form, Footer } from './components';
+import {
+  Header,
+  Hero,
+  Features,
+  MoreInformation,
+  Testimonials,
+  Form,
+  Footer,
+} from "./components";
 import { motion } from "motion/react";
 
 function App() {
   return (
     <main className="mx-auto">
-
       <section className="bg-Navy-850 p-6 h-[460px] relative md:h-[700px] overflow-hidden">
         <Header />
 
@@ -16,8 +23,6 @@ function App() {
           initial={{ opacity: 0, y: 18, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          // ↑ Entra con fade + leve subida + micro scale.
-          // Esto da sensación de “aparece” suave y moderno sin ser invasivo.
         />
 
         {/* BG CURVY (animo el fondo para que no quede “plano”) */}
@@ -25,8 +30,6 @@ function App() {
           className="absolute bottom-0 left-0 w-full xl:hidden"
           src="/images/bg-curvy-mobile.svg"
           alt="bg curvy mobile"
-          // ↑ El fondo aparece un poquito después del hero,
-          // para crear profundidad (primero contenido, luego fondo).
         />
 
         <img
@@ -47,9 +50,8 @@ function App() {
         <Form />
         <Footer />
       </section>
-
     </main>
-  )
+  );
 }
 
 export default App;

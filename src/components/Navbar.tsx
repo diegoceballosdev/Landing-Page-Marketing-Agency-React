@@ -4,14 +4,17 @@ const navContainer = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.05 }
-    // ↑ staggerChildren: aparecen uno por uno (más dinámico que todos juntos).
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
   },
 };
 
 const navItem = {
   hidden: { opacity: 0, y: -8 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" as const} },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: "easeOut" as const },
+  },
 };
 
 export const Navbar = () => {
